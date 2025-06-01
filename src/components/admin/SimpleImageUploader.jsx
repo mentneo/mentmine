@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { uploadImageToCloudinary } from '../../utils/cloudinary';
 import { FaUpload, FaSpinner, FaImage, FaTimes } from 'react-icons/fa';
+import { getImagePath } from '../../utils/imageUtils';
 
 const SimpleImageUploader = ({ onImageUploaded, currentImage, label = 'Image' }) => {
   const [isUploading, setIsUploading] = useState(false);
@@ -89,7 +90,7 @@ const SimpleImageUploader = ({ onImageUploaded, currentImage, label = 'Image' })
       {preview && (
         <div className="mb-2 relative">
           <img
-            src={preview}
+            src={getImagePath(preview)}
             alt="Preview"
             className="h-32 w-32 object-cover rounded-lg shadow-sm border border-gray-200"
           />

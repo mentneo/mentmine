@@ -127,6 +127,63 @@ export const getPlaceholderUrl = (imageUrl) => {
   return getOptimizedImageUrl(imageUrl, { width: 30, height: 30, crop: 'fill', quality: 30 });
 };
 
+/**
+ * Utility functions for handling image paths correctly in both development and production
+ */
+
+// Gets the correct path for an image in any environment
+export const getImagePath = (path) => {
+  // Check if path is already a full URL
+  if (path && (path.startsWith('http://') || path.startsWith('https://'))) {
+    return path;
+  }
+
+  // Check if running in production
+  if (process.env.NODE_ENV === 'production') {
+    // Get the base URL from public URL or default to root
+    const baseUrl = process.env.PUBLIC_URL || '';
+    // Ensure path starts with a slash
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    return `${baseUrl}${normalizedPath}`;
+  }
+
+  // In development, just return the path
+  return path;
+};
+
+// Gets image URL for Cloudinary or other hosted images
+export const getCloudinaryUrl = (publicId, options = {}) => {
+  const { width, height, crop = 'fill' } = options;
+  
+  if (!publicId) return '';
+  
+  // If it's already a full URL, just return it
+  if (publicId.startsWith('http')) return publicId;
+  
+  // Base Cloudinary URL
+  let url = `https://res.cloudinary.com/davjxvz8w/image/upload/`;
+  
+  // Add transformations if specified
+  if (width || height) {
+    let transformations = '';
+    if (crop) transformations += `c_${crop},`;
+    if (width) transformations += `w_${width},`;
+    if (height) transformations += `h_${height},`;
+    
+    // Remove trailing comma
+    if (transformations.endsWith(',')) {
+      transformations = transformations.slice(0, -1);
+    }
+    
+    url += `${transformations}/`;
+  }
+  
+  // Add public ID
+  url += publicId;
+  
+  return url;
+};
+
 export default {
   uploadImage,
   getOptimizedImageUrl,

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import Button from '../../components/ui/Button';
+import { getImagePath } from '../../utils/imageUtils';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ const LoginPage = () => {
         <div>
           <img
             className="mx-auto h-12 w-auto"
-            src="/logo.png"
+            src={getImagePath('/logo.png')}
             alt="Mentneo"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
