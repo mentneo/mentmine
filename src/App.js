@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -21,10 +21,29 @@ import EventDetailPage from './pages/EventDetailPage';
 
 import './App.css';
 
+const RouteHandler = () => {
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    const intendedRoute = sessionStorage.getItem('intendedRoute');
+    if (intendedRoute) {
+      // Clear it immediately to prevent loops
+      sessionStorage.removeItem('intendedRoute');
+      console.log('Redirecting to stored route:', intendedRoute);
+      // Navigate to the intended path
+      navigate(intendedRoute);
+    }
+  }, [navigate]);
+  
+  return null;
+};
+
 function App() {
   return (
     <AuthProvider>
       <Router>
+        {/* Add the RouteHandler at the top */}
+        <RouteHandler />
         <Routes>
           {/* Public routes */}
           <Route path="/" element={<LandingPage />} />

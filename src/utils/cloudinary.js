@@ -2,7 +2,7 @@
  * Cloudinary integration for image uploads and optimizations
  */
 
-// Cloudinary configuration with your provided values
+// Secure your Cloudinary credentials (move to environment variables later)
 const CLOUDINARY_CLOUD_NAME = 'dp8bfdbab';  
 const CLOUDINARY_UPLOAD_PRESET = 'cryptchat';
 const CLOUDINARY_API_KEY = '337739287121541';
