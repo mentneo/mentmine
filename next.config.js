@@ -2,7 +2,18 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  // Fix for 404 errors by ensuring proper static output
+  output: 'export',
+  
+  // Improved page routing
+  trailingSlash: false,
+  
+  // Custom asset prefix for CDN if needed
+  assetPrefix: process.env.NODE_ENV === 'production' ? process.env.ASSET_PREFIX || '' : '',
+  
+  // Optimize images further
   images: {
+    unoptimized: true,
     domains: ['res.cloudinary.com', 'mentneo.com'],
     formats: ['image/avif', 'image/webp'],
   },
@@ -19,10 +30,12 @@ const nextConfig = {
       },
     ];
   },
-  // Disable edge runtime temporarily to solve invocation issues
+  
+  // Fix experimental settings causing deployment errors
   experimental: {
-    runtime: 'nodejs',
-    serverComponents: true,
+    // Remove runtime setting that can cause edge function errors
+    serverComponents: false,
+    appDir: false,
   },
 };
 

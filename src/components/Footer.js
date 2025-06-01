@@ -70,7 +70,7 @@ function Footer() {
             <ul className="space-y-2">
               <li className="text-blue-200">kakinada, kakinada, andhra pradesh</li>
               <li className="text-blue-200">+91 9182146476</li>
-              <li className="text-blue-200">mentneo6@gmail.com</li>
+              <li className="text-blue-200">official@mentneo.com</li>
               <li className="text-blue-200">Mon-Fri: 9am - 6pm</li>
             </ul>
           </div>
