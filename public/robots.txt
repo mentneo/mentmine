@@ -4,37 +4,13 @@
 User-agent: *
 Allow: /
 
-# Specific page permissions with crawl priority
+# Specific page permissions
 Allow: /about
 Allow: /contact
 Allow: /for-students
 Allow: /privacy
 Allow: /terms
-Allow: /courses
-Allow: /mentors
 
-# Prevent crawling of admin and authentication pages
-Disallow: /admin/
-Disallow: /login
-Disallow: /signup
-Disallow: /reset-password
-Disallow: /dashboard
-
-# Prevent crawling of temporary or development paths
-Disallow: /tmp/
-Disallow: /temp/
-Disallow: /dev/
-Disallow: /test/
-
-# Prevent duplicate content issues
-Disallow: /*?*sort=
-Disallow: /*?*filter=
-Disallow: /*?*page=
-
-# Sitemap locations
+# No crawl delay (to help with indexing)
+# Sitemap location
 Sitemap: https://mentneo.com/sitemap.xml
-Sitemap: https://mentneo.com/course-sitemap.xml
-Sitemap: https://mentneo.com/blog-sitemap.xml
-
-# Crawl delay to prevent overloading your server
-Crawl-delay: 1
