@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap'); /* Import new font */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-mystic-text bg-mystic-dark antialiased; /* Updated for magical theme */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-magic text-starlight; /* Use magic font for headings */
+  }
+}
+
+/* Custom styles for Swiper component */
+.testimonial-swiper .swiper-pagination-bullet {
+  @apply bg-starlight bg-opacity-70;
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+  @apply bg-starlight;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Smooth hover transitions */
+.hover-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-400;
+}
+
+/* Add some global magical effects if desired */
+.sparkle-text {
+  animation: sparkle 2s infinite;
+  text-shadow: 0 0 5px theme('colors.starlight.DEFAULT'), 0 0 10px theme('colors.starlight.DEFAULT');
+}

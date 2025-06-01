@@ -1,0 +1,16 @@
+[http]
+    postBuffer = 524288000
+    maxRequestBuffer = 100M
+    lowSpeedLimit = 0
+    lowSpeedTime = 999999
+[core]
+    compression = 0
+    packedGitLimit = 512m
+    packedGitWindowSize = 512m
+    hooksPath = .git/hooks
+[pack]
+    deltaCacheSize = 2047m
+    packSizeLimit = 2047m
+    windowMemory = 2047m
+[commit]
+    template = .gitmessage

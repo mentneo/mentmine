@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://mentneo.com/</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://mentneo.com/privacy</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mentneo.com/terms</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Login Page -->
+  <url>
+    <loc>https://mentneo.com/admin/login</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Courses (example entries - update as needed) -->
+  <url>
+    <loc>https://mentneo.com/courses/full-stack-web-development</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mentneo.com/courses/front-end-development</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mentneo.com/courses/back-end-development</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mentneo.com/courses/mobile-app-development</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mentneo.com/courses/cloud-computing</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

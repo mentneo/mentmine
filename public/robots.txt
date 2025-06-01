@@ -1,0 +1,13 @@
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Specific page permissions
+Allow: /about
+Allow: /contact
+Allow: /for-students
+Allow: /privacy
+Allow: /terms
+
+# Sitemap location
+Sitemap: https://mentneo.com/sitemap.xml
