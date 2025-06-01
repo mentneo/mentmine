@@ -1,8 +1,31 @@
 {
   "version": 2,
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" }
+    },
+    {
+      "src": "/logo-2d.png",
+      "dest": "/logo-2d.png"
+    },
+    {
+      "src": "/logo-3d.png",
+      "dest": "/logo-3d.png"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ],
   "images": {
     "sizes": [16, 32, 64, 128, 256, 512, 1024, 2048],
@@ -23,6 +46,8 @@
     "REACT_APP_API_URL": "https://api.mentneo.com",
     "REACT_APP_CLOUDINARY_URL": "https://res.cloudinary.com/davjxvz8w/image/upload",
     "REACT_APP_CLOUDINARY_UPLOAD_PRESET": "cryptchat",
-    "REACT_APP_CLOUDINARY_FOLDER": "mentneo_images"
+    "REACT_APP_CLOUDINARY_FOLDER": "mentneo_images",
+    "NODE_ENV": "production",
+    "PUBLIC_URL": ""
   }
 }
