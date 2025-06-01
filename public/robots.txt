@@ -1,16 +1,6 @@
-# Enhanced robots.txt for better SEO
-
-# Allow all web crawlers
+# Enhanced robots.txt for better indexing
 User-agent: *
 Allow: /
 
-# Specific page permissions
-Allow: /about
-Allow: /contact
-Allow: /for-students
-Allow: /privacy
-Allow: /terms
-
-# No crawl delay (to help with indexing)
 # Sitemap location
 Sitemap: https://mentneo.com/sitemap.xml

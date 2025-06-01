@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main pages -->
+  <!-- Main pages - Updated with current dates (not future dates) -->
   <url>
     <loc>https://mentneo.com/</loc>
-    <lastmod>2025-06-01T12:00:00+00:00</lastmod>
+    <lastmod>2023-11-10T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mentneo.com/about</loc>
-    <lastmod>2025-06-01T12:00:00+00:00</lastmod>
+    <lastmod>2023-11-10T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mentneo.com/contact</loc>
-    <lastmod>2025-06-01T12:00:00+00:00</lastmod>
+    <lastmod>2023-11-10T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mentneo.com/for-students</loc>
-    <lastmod>2025-06-01T12:00:00+00:00</lastmod>
+    <lastmod>2023-11-10T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mentneo.com/privacy</loc>
-    <lastmod>2025-06-01T12:00:00+00:00</lastmod>
+    <lastmod>2023-11-10T12:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://mentneo.com/terms</loc>
-    <lastmod>2025-06-01T12:00:00+00:00</lastmod>
+    <lastmod>2023-11-10T12:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <!-- Courses -->
   <url>
     <loc>https://mentneo.com/courses</loc>
-    <lastmod>2025-06-01T12:00:00+00:00</lastmod>
+    <lastmod>2023-11-10T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
