@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ],
+  "images": {
+    "sizes": [16, 32, 64, 128, 256, 512, 1024, 2048],
+    "domains": ["mentneo.com", "res.cloudinary.com"],
+    "formats": ["image/avif", "image/webp"]
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://api.mentneo.com",
+    "REACT_APP_CLOUDINARY_URL": "https://res.cloudinary.com/davjxvz8w/image/upload",
+    "REACT_APP_CLOUDINARY_UPLOAD_PRESET": "cryptchat",
+    "REACT_APP_CLOUDINARY_FOLDER": "mentneo_images"
+  }
+}

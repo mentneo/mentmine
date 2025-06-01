@@ -131,57 +131,65 @@ export const getPlaceholderUrl = (imageUrl) => {
  * Utility functions for handling image paths correctly in both development and production
  */
 
-// Gets the correct path for an image in any environment
+// Helper to determine if we're running in production
+const isProduction = process.env.NODE_ENV === 'production';
+
+/**
+ * Gets the correct path for an image in any environment
+ * @param {string} path - The image path
+ * @returns {string} - The correct URL for the image
+ */
 export const getImagePath = (path) => {
-  // Check if path is already a full URL
+  // If already a full URL, return as-is
   if (path && (path.startsWith('http://') || path.startsWith('https://'))) {
     return path;
   }
-
-  // Check if running in production
-  if (process.env.NODE_ENV === 'production') {
-    // Get the base URL from public URL or default to root
+  
+  // Handle paths with or without leading slash
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  
+  // In production, use the PUBLIC_URL environment variable
+  if (isProduction) {
     const baseUrl = process.env.PUBLIC_URL || '';
-    // Ensure path starts with a slash
-    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
     return `${baseUrl}${normalizedPath}`;
   }
-
-  // In development, just return the path
-  return path;
+  
+  // In development, use the path directly
+  return normalizedPath;
 };
 
-// Gets image URL for Cloudinary or other hosted images
+/**
+ * Gets the Cloudinary URL for an image
+ * @param {string} publicId - Cloudinary public ID or URL
+ * @param {object} options - Transformation options
+ * @returns {string} - The full Cloudinary URL
+ */
 export const getCloudinaryUrl = (publicId, options = {}) => {
-  const { width, height, crop = 'fill' } = options;
-  
-  if (!publicId) return '';
-  
-  // If it's already a full URL, just return it
-  if (publicId.startsWith('http')) return publicId;
-  
-  // Base Cloudinary URL
-  let url = `https://res.cloudinary.com/davjxvz8w/image/upload/`;
-  
-  // Add transformations if specified
-  if (width || height) {
-    let transformations = '';
-    if (crop) transformations += `c_${crop},`;
-    if (width) transformations += `w_${width},`;
-    if (height) transformations += `h_${height},`;
-    
-    // Remove trailing comma
-    if (transformations.endsWith(',')) {
-      transformations = transformations.slice(0, -1);
-    }
-    
-    url += `${transformations}/`;
+  // If already a full URL, return as-is
+  if (!publicId || publicId.startsWith('http')) {
+    return publicId || '';
   }
   
-  // Add public ID
-  url += publicId;
+  const { width, height, quality = 'auto', format = 'auto', crop = 'fill' } = options;
   
-  return url;
+  // Base Cloudinary URL from environment variables or default
+  const baseUrl = process.env.REACT_APP_CLOUDINARY_URL || 
+                 'https://res.cloudinary.com/davjxvz8w/image/upload';
+  
+  // Build transformation string
+  let transformations = [];
+  
+  if (crop) transformations.push(`c_${crop}`);
+  if (width) transformations.push(`w_${width}`);
+  if (height) transformations.push(`h_${height}`);
+  if (quality) transformations.push(`q_${quality}`);
+  if (format) transformations.push(`f_${format}`);
+  
+  const transformString = transformations.length > 0 
+    ? `${transformations.join(',')}/${publicId}`
+    : publicId;
+  
+  return `${baseUrl}/${transformString}`;
 };
 
 export default {
