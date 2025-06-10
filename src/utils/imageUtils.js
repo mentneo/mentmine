@@ -131,32 +131,29 @@ export const getPlaceholderUrl = (imageUrl) => {
  * Utility functions for handling image paths correctly in both development and production
  */
 
-// Helper to determine if we're running in production
-const isProduction = process.env.NODE_ENV === 'production';
-
 /**
- * Gets the correct path for an image in any environment
- * @param {string} path - The image path
+ * Gets the correct image URL regardless of environment or deployment platform
+ * @param {string} path - The relative path to the image
  * @returns {string} - The correct URL for the image
  */
-export const getImagePath = (path) => {
-  // If already a full URL, return as-is
+export function getImageUrl(path) {
+  // If it's already a full URL (starts with http:// or https://) return as is
   if (path && (path.startsWith('http://') || path.startsWith('https://'))) {
     return path;
   }
+
+  // Make sure path starts with a slash
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
   
-  // Handle paths with or without leading slash
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  
-  // In production, use the PUBLIC_URL environment variable
-  if (isProduction) {
-    const baseUrl = process.env.PUBLIC_URL || '';
-    return `${baseUrl}${normalizedPath}`;
+  // In development use the PUBLIC_URL
+  if (process.env.NODE_ENV === 'development') {
+    const publicUrl = process.env.PUBLIC_URL || '';
+    return `${publicUrl}${cleanPath}`;
   }
   
-  // In development, use the path directly
-  return normalizedPath;
-};
+  // In production, use relative paths
+  return cleanPath;
+}
 
 /**
  * Gets the Cloudinary URL for an image
