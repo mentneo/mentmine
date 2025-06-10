@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mentneo - Our Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXVDMYBHBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NXVDMYBHBS');
+    </script>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --dark: #111827;
+            --light: #f3f4f6;
+            --text-light: #f9fafb;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            min-height: 60vh;
+            background: linear-gradient(45deg, rgba(99, 102, 241, 0.1), rgba(79, 70, 229, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 5%;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--primary);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .process-section {
+            padding: 100px 5%;
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .process-timeline {
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .process-step {
+            display: flex;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .step-number {
+            flex: 0 0 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .testimonials-section {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .testimonial-carousel {
+            max-width: 1000px;
+            margin: 50px auto;
+            position: relative;
+            height: 300px;
+        }
+
+        .testimonial-card {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: all 0.5s ease;
+            transform: translateX(100px);
+        }
+
+        .testimonial-card.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .nav-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-dot.active {
+            background: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .back-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+            background: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div>
+            <h1 class="hero-title">Our Services</h1>
+            <p>Comprehensive solutions for your digital journey</p>
+        </div>
+    </section>
+
+    <div class="service-grid">
+        <!-- Web Development -->
+        <div class="service-card">
+            <span class="price-tag">From $999</span>
+            <div class="service-icon">💻</div>
+            <div class="service-content">
+                <h3>Web Development</h3>
+                <p>Full-stack web development with modern technologies</p>
+                <ul class="feature-list">
+                    <li>Custom Website Development</li>
+                    <li>E-commerce Solutions</li>
+                    <li>Progressive Web Apps</li>
+                    <li>API Development</li>
+                </ul>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Mobile Development -->
+        <div class="service-card">
+            <span class="price-tag">From $1499</span>
+            <div class="service-icon">📱</div>
+            <div class="service-content">
+                <h3>Mobile Development</h3>
+                <p>Native and cross-platform mobile applications</p>
+                <ul class="feature-list">
+                    <li>iOS Development</li>
+                    <li>Android Development</li>
+                    <li>React Native Apps</li>
+                    <li>App Store Optimization</li>
+                </ul>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+        </div>
+
+        <!-- UI/UX Design -->
+        <div class="service-card">
+            <span class="price-tag">From $799</span>
+            <div class="service-icon">🎨</div>
+            <div class="service-content">
+                <h3>UI/UX Design</h3>
+                <p>User-centered design solutions</p>
+                <ul class="feature-list">
+                    <li>User Interface Design</li>
+                    <li>User Experience Design</li>
+                    <li>Wireframing & Prototyping</li>
+                    <li>Design Systems</li>
+                </ul>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="process-section">
+        <h2 style="text-align: center; margin-bottom: 50px;">Our Process</h2>
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Discovery & Planning</h3>
+                    <p>We analyze your requirements and create a detailed project roadmap.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Design & Development</h3>
+                    <p>Our team creates beautiful designs and implements robust functionality.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Testing & Refinement</h3>
+                    <p>Rigorous testing ensures quality and optimal performance.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Launch & Support</h3>
+                    <p>We deploy your project and provide ongoing support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <h2>Client Testimonials</h2>
+        <div class="testimonial-carousel">
+            <!-- Testimonials will be added dynamically -->
+        </div>
+        <div class="nav-dots"></div>
+    </section>
+
+    <script>
+        // Process Steps Animation
+        const processSteps = document.querySelectorAll('.process-step');
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        processSteps.forEach(step => observer.observe(step));
+
+        // Testimonials Carousel
+        const testimonials = [
+            {
+                text: "Outstanding service! The team delivered beyond our expectations.",
+                author: "John Smith",
+                company: "Tech Innovators"
+            },
+            {
+                text: "Professional, timely, and incredibly skilled team.",
+                author: "Sarah Johnson",
+                company: "Digital Solutions Inc."
+            },
+            {
+                text: "Best investment for our business growth.",
+                author: "Mike Wilson",
+                company: "Growth Ventures"
+            }
+        ];
+
+        const carousel = document.querySelector('.testimonial-carousel');
+        const dotsContainer = document.querySelector('.nav-dots');
+        let currentSlide = 0;
+
+        // Create testimonial cards
+        testimonials.forEach((testimonial, index) => {
+            const card = document.createElement('div');
+            card.classList.add('testimonial-card');
+            if (index === 0) card.classList.add('active');
+            
+            card.innerHTML = `
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">${testimonial.text}</p>
+                <h4 style="color: var(--primary);">${testimonial.author}</h4>
+                <p style="font-size: 0.9rem;">${testimonial.company}</p>
+            `;
+            
+            carousel.appendChild(card);
+
+            // Create navigation dot
+            const dot = document.createElement('div');
+            dot.classList.add('nav-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goToSlide(index) {
+            const cards = document.querySelectorAll('.testimonial-card');
+            const dots = document.querySelectorAll('.nav-dot');
+            
+            cards.forEach(card => card.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            cards[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            const nextSlide = (currentSlide + 1) % testimonials.length;
+            goToSlide(nextSlide);
+        }, 5000);
+
+        // Service Card Hover Effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 20px 40px rgba(99, 102, 241, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
+            });
+        });
+    </script>
+    <a href="main.html" class="back-btn">Back to Main</a>
+</body>
+</html>

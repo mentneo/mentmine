@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Allow: /assets/images/
+Allow: /*.html$
+Allow: /*.js$
+Allow: /*.css$
+Allow: /sitemap.xml$
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+
+# Set crawl speed
+Crawl-delay: 5
+
+# Sitemap
+Sitemap: https://mentneo.com/sitemap.xml

@@ -1,0 +1,3 @@
+[submodule "mentneo1"]
+	path = mentneo1
+	url = https://github.com/mentneo/mentneo1.git
