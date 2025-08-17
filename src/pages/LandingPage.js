@@ -31,6 +31,43 @@ function LandingPage() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mentneo.com/" />
         <meta property="og:image" content="https://mentneo.com/MENTNEO.png" />
+        {/* Organization Structured Data */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Mentneo",
+            "url": "https://mentneo.com",
+            "logo": "https://mentneo.com/MENTNEO.png",
+            "sameAs": [
+              "https://www.facebook.com/mentneo",
+              "https://twitter.com/mentneo",
+              "https://www.instagram.com/mentneo/",
+              "https://www.linkedin.com/in/abhi-yeduru-277590336/",
+              "https://www.youtube.com/channel/UCUXo4LktCpmsEtlP5hBc_qQ"
+            ],
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "telephone": "+91-9182146476",
+              "contactType": "customer service",
+              "areaServed": "IN",
+              "availableLanguage": "English"
+            }]
+          }
+        `}</script>
+        {/* WebSite Structured Data for Sitelinks Search Box */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://mentneo.com/",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://mentneo.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
+        `}</script>
       </Helmet>
       {/* Floating theme toggle button */}
       <button

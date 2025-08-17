@@ -15,7 +15,47 @@
     <loc>https://mentneo.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+  </url>  <Helmet>
+    <script type="application/ld+json">
+      {`
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Mentneo",
+          "url": "https://mentneo.com",
+          "logo": "https://mentneo.com/MENTNEO.png",
+          "sameAs": [
+            "https://www.facebook.com/mentneo",
+            "https://twitter.com/mentneo",
+            "https://www.instagram.com/mentneo/",
+            "https://www.linkedin.com/in/abhi-yeduru-277590336/",
+            "https://www.youtube.com/channel/UCUXo4LktCpmsEtlP5hBc_qQ"
+          ],
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "telephone": "+91-9182146476",
+            "contactType": "customer service",
+            "areaServed": "IN",
+            "availableLanguage": "English"
+          }]
+        }
+      `}
+    </script>
+    <script type="application/ld+json">
+      {`
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://mentneo.com/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://mentneo.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      `}
+    </script>
+  </Helmet>
   <url>
     <loc>https://mentneo.com/portfolio</loc>
     <changefreq>weekly</changefreq>
