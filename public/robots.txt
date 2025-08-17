@@ -1,6 +1,6 @@
 # Enhanced robots.txt for better indexing
 User-agent: *
-Allow: /
+Allow: / 
 
 # Sitemap location
 Sitemap: https://mentneo.com/sitemap.xml

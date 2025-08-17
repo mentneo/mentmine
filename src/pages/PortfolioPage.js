@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { Navbar, Footer } from '../components';
+// import { Navbar, Footer } from '../components';
 import { db } from '../firebase/config';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { PORTFOLIO_COLLECTION } from '../constants/portfolio';
@@ -27,7 +27,6 @@ function PortfolioPage() {
 
   return (
     <div>
-      <Navbar />
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold mb-8 text-center">Design Portfolio</h1>
         <p className="text-lg text-gray-700 mb-12 text-center max-w-2xl mx-auto">Showcase of our best work and student projects. Explore our creative designs and studio projects below.</p>
@@ -56,7 +55,7 @@ function PortfolioPage() {
           </div>
         )}
       </div>
-      <Footer />
+  {/* No Footer here, handled by parent */}
     </div>
   );
 }

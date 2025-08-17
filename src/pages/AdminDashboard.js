@@ -17,6 +17,8 @@ import HiringRequests from './admin/HiringRequests';
 import ContactMessages from './admin/ContactMessages';
 import PortfolioManagement from './admin/PortfolioManagement';
 import ServicesManagement from './admin/ServicesManagement';
+import CertificateGenerator from './admin/CertificateGenerator';
+import CertificateHistory from './admin/CertificateHistory';
 
 function AdminDashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -104,6 +106,8 @@ function AdminDashboard() {
     { path: '/admin/events', label: 'Events', icon: <FaCalendarAlt className="mr-2" /> },
     { path: '/admin/portfolio', label: 'Portfolio', icon: <FaStar className="mr-2" /> },
     { path: '/admin/services', label: 'Services', icon: <FaStar className="mr-2" /> },
+    { path: '/admin/certificates', label: 'Generate Certificate', icon: <FaStar className="mr-2" /> },
+    { path: '/admin/certificates/history', label: 'Certificate History', icon: <FaStar className="mr-2" /> },
     { path: '/admin/hiring-requests', label: 'Hiring Requests', icon: <FaUserTie className="mr-2" /> },
     { path: '/admin/contact-messages', label: 'Contact Messages', icon: <FaEnvelope className="mr-2" /> },
     { path: '/admin/team', label: 'Team', icon: <FaUserTie className="mr-2" /> },
@@ -247,6 +251,8 @@ function AdminDashboard() {
               <Route path="/events" element={<EventsManagement />} />
               <Route path="/portfolio" element={<PortfolioManagement />} />
               <Route path="/services" element={<ServicesManagement />} />
+              <Route path="/certificates" element={<CertificateGenerator />} />
+              <Route path="/certificates/history" element={<CertificateHistory />} />
               <Route path="/hiring-requests" element={<HiringRequests />} />
               <Route path="/contact-messages" element={<ContactMessages />} />
               <Route path="/team" element={<TeamManagement />} />

@@ -16,6 +16,7 @@ import AdminLogin from './pages/AdminLogin';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import NotFoundPage from './pages/NotFoundPage';
+import CertificateView from './pages/CertificateView';
 import CoursesPage from './pages/CoursesPage';
 import EventsPage from './pages/EventsPage'; 
 import CourseDetailPage from './pages/CourseDetailPage';
@@ -45,6 +46,8 @@ function App() {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/events/:id" element={<EventDetailPage />} />
           
+          {/* Certificate public view */}
+          <Route path="/certificates/:id" element={<CertificateView />} />
           {/* Admin routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route
