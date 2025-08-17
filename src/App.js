@@ -8,7 +8,9 @@ import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ForStudentsPage from './pages/ForStudentsPage';
-import HireWithUs from './pages/HireWithUs'; // Add HireWithUs import
+import HireWithUs from './pages/HireWithUs';
+import PortfolioPage from './pages/PortfolioPage';
+import ServicesPage from './pages/ServicesPage';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminLogin from './pages/AdminLogin';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -32,6 +34,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/for-students" element={<ForStudentsPage />} />
           <Route path="/hire-with-us" element={<HireWithUs />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsConditions />} />
           

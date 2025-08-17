@@ -36,6 +36,9 @@ function Navbar() {
           <Link to="/about" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">About</Link>
           <Link to="/courses" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Courses</Link>
           <Link to="/events" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Events</Link>
+          <Link to="/portfolio" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Portfolio</Link>
+          <Link to="/services" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Services</Link>
+          <Link to="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</Link>
           <Link to="/for-students" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">For Students</Link>
           <Link to="/hire-with-us" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Hire With Us</Link>
           
@@ -85,6 +88,9 @@ function Navbar() {
             <Link to="/about" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">About</Link>
             <Link to="/courses" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Courses</Link>
             <Link to="/events" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Events</Link>
+            <Link to="/portfolio" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Portfolio</Link>
+            <Link to="/services" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Services</Link>
+            <Link to="/contact" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Contact</Link>
             <Link to="/for-students" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">For Students</Link>
             <Link to="/hire-with-us" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Hire With Us</Link>
             
