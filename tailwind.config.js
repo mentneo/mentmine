@@ -40,6 +40,7 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         magic: ['"Cinzel Decorative"', 'serif'], // A more thematic font for headings
+        poppins: ['Poppins', 'sans-serif'], // Add Poppins font
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-in-out',

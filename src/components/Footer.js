@@ -68,7 +68,7 @@ function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-2">
-              <li className="text-blue-200">kakinada, kakinada, andhra pradesh</li>
+              <li className="text-blue-200">Andhra Pradesh, Kakinada</li>
               <li className="text-blue-200">+91 9182146476</li>
               <li className="text-blue-200">official@mentneo.com</li>
               <li className="text-blue-200">Mon-Fri: 9am - 6pm</li>

@@ -11,6 +11,7 @@ import ForStudentsPage from './pages/ForStudentsPage';
 import HireWithUs from './pages/HireWithUs';
 import PortfolioPage from './pages/PortfolioPage';
 import ServicesPage from './pages/ServicesPage';
+import CreatorsPage from './pages/CreatorsPage';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminLogin from './pages/AdminLogin';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -37,6 +38,7 @@ function App() {
           <Route path="/hire-with-us" element={<HireWithUs />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/creators" element={<CreatorsPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsConditions />} />
           

@@ -8,7 +8,9 @@ import {
   Footer, 
   Testimonials,
   FeaturedCourses,
-  Events
+  FeaturedServices,
+  Events,
+  Contact
 } from '../components';
 import PortfolioPage from './PortfolioPage';
 
@@ -88,6 +90,9 @@ function LandingPage() {
         <div className={`${anim} ${theme === 'dark' ? 'opacity-100 scale-100' : 'opacity-100 scale-100'}`}>
           <FeaturedCourses />
         </div>
+        <div className={`${anim} ${theme === 'dark' ? 'opacity-100 scale-100' : 'opacity-100 scale-100'}`}>
+          <FeaturedServices />
+        </div>
         <section id="portfolio" className={`${anim} ${theme === 'dark' ? 'opacity-100 -translate-y-0' : 'opacity-100 -translate-y-0'}`}>
           <PortfolioPage />
         </section>
@@ -96,6 +101,9 @@ function LandingPage() {
         </div>
         <div className={`${anim} ${theme === 'dark' ? 'opacity-100' : 'opacity-100'}`}>
           <Events limit={3} showViewAll={true} />
+        </div>
+        <div className={`${anim} ${theme === 'dark' ? 'opacity-100' : 'opacity-100'}`}>
+          <Contact />
         </div>
         <Footer />
       </div>

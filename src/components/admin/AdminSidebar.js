@@ -6,6 +6,7 @@ function AdminSidebar() {
   const links = [
     // ...existing links...
     { path: '/admin/team', name: 'Team', icon: <FaUserFriends /> },
+    { path: '/admin/creators', name: 'Creators', icon: <FaUsers /> },
   ];
 
   return (

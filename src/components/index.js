@@ -10,6 +10,7 @@ import Features from './Features';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
 import FeaturedCourses from './FeaturedCourses';
+import FeaturedServices from './FeaturedServices';
 import Events from './Events';
 import TeamSection from './TeamSection';
 
@@ -30,6 +31,7 @@ export {
   Testimonials,
   Contact,
   FeaturedCourses,
+  FeaturedServices,
   Events,
   TeamSection,
   

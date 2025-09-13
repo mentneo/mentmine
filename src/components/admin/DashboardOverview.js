@@ -306,6 +306,27 @@ function DashboardOverview() {
     <div className="space-y-8">
       <h1 className="text-2xl font-semibold">Dashboard Overview</h1>
       
+      {/* Quick Access Buttons */}
+      <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+        <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
+        <div className="flex flex-wrap gap-3">
+          <a href="/admin/creators" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">
+            <FaUserGraduate className="mr-2" /> View Creator Requests
+          </a>
+          <a href="/admin/certificates" className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex items-center">
+            <FaGraduationCap className="mr-2" /> Generate Certificate
+          </a>
+          <a href="/admin/contact-messages" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded flex items-center">
+            <FaEnvelope className="mr-2" /> View Messages
+            {stats.pendingMessages > 0 && (
+              <span className="ml-2 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-1">
+                {stats.pendingMessages}
+              </span>
+            )}
+          </a>
+        </div>
+      </div>
+      
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white rounded-lg shadow-md p-6">
@@ -507,7 +528,17 @@ function DashboardOverview() {
       
       {/* Recent Messages */}
       <div className="bg-white rounded-lg shadow-md p-6">
-        <h3 className="text-lg font-semibold mb-4">Recent Messages</h3>
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-lg font-semibold">Recent Messages</h3>
+          <a href="/admin/contact-messages" className="text-blue-600 hover:underline text-sm flex items-center">
+            View All Messages
+            {stats.pendingMessages > 0 && (
+              <span className="ml-2 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-1">
+                {stats.pendingMessages}
+              </span>
+            )}
+          </a>
+        </div>
         
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">

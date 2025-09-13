@@ -39,7 +39,7 @@ function Navbar() {
           <Link to="/portfolio" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Portfolio</Link>
           <Link to="/services" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Services</Link>
           <Link to="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</Link>
-          <Link to="/for-students" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">For Students</Link>
+          <Link to="/creators" className="bg-yellow-400 text-blue-900 hover:bg-yellow-300 px-3 py-1 rounded-md font-medium transition-colors">Creators</Link>
           <Link to="/hire-with-us" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Hire With Us</Link>
           
           {/* Call Us Button */}
@@ -91,7 +91,7 @@ function Navbar() {
             <Link to="/portfolio" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Portfolio</Link>
             <Link to="/services" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Services</Link>
             <Link to="/contact" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Contact</Link>
-            <Link to="/for-students" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">For Students</Link>
+            <Link to="/creators" className="bg-yellow-400 text-blue-900 hover:bg-yellow-300 block px-3 py-2 rounded-md font-medium">Creators</Link>
             <Link to="/hire-with-us" className="text-gray-700 hover:bg-blue-50 hover:text-blue-600 block px-3 py-2 rounded-md">Hire With Us</Link>
             
             <a 

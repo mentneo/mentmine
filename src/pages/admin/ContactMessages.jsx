@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaEye, FaTrash, FaEnvelope, FaEnvelopeOpen, FaDownload } from 'react-icons/fa';
 import Button from '../../components/ui/Button';
+import { db } from '../../firebase/config';
+import { collection, getDocs, query, orderBy, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 
 const ContactMessages = () => {
   const [messages, setMessages] = useState([]);
@@ -14,10 +16,19 @@ const ContactMessages = () => {
 
   const fetchMessages = async () => {
     try {
-      // Replace with your actual API call
-      const response = await fetch('/api/contact-messages');
-      const data = await response.json();
-      setMessages(data);
+      setLoading(true);
+      const messagesRef = collection(db, 'contactMessages');
+      const messagesQuery = query(messagesRef, orderBy('createdAt', 'desc'));
+      const snapshot = await getDocs(messagesQuery);
+      
+      const messagesData = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+        createdAt: doc.data().createdAt?.toDate?.() || new Date(),
+        updatedAt: doc.data().updatedAt?.toDate?.() || new Date()
+      }));
+      
+      setMessages(messagesData);
     } catch (error) {
       console.error('Error fetching contact messages:', error);
     } finally {
@@ -27,10 +38,16 @@ const ContactMessages = () => {
 
   const handleMarkAsRead = async (id) => {
     try {
-      await fetch(`/api/contact-messages/${id}/read`, { method: 'PUT' });
+      const messageRef = doc(db, 'contactMessages', id);
+      await updateDoc(messageRef, { 
+        read: true,
+        status: 'read',
+        updatedAt: new Date()
+      });
+      
       setMessages(messages.map(message => {
         if (message.id === id) {
-          return { ...message, read: true };
+          return { ...message, read: true, status: 'read', updatedAt: new Date() };
         }
         return message;
       }));
@@ -42,7 +59,9 @@ const ContactMessages = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this message?')) {
       try {
-        await fetch(`/api/contact-messages/${id}`, { method: 'DELETE' });
+        const messageRef = doc(db, 'contactMessages', id);
+        await deleteDoc(messageRef);
+        
         setMessages(messages.filter(message => message.id !== id));
         if (selectedMessage?.id === id) {
           setSelectedMessage(null);
@@ -88,7 +107,13 @@ const ContactMessages = () => {
 
   const filteredMessages = filter === 'all' 
     ? messages 
-    : messages.filter(msg => filter === 'read' ? msg.read : !msg.read);
+    : messages.filter(msg => {
+        if (filter === 'read') {
+          return msg.read === true || msg.status === 'read';
+        } else {
+          return msg.read !== true && msg.status !== 'read';
+        }
+      });
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -147,11 +172,11 @@ const ContactMessages = () => {
                       <p className="text-sm text-gray-500 truncate">{message.subject || 'No subject'}</p>
                     </div>
                     <div className="flex items-center">
-                      {!message.read && (
+                      {(!message.read && message.status !== 'read') && (
                         <span className="inline-block w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
                       )}
                       <span className="text-xs text-gray-500">
-                        {new Date(message.createdAt).toLocaleDateString()}
+                        {message.createdAt.toLocaleDateString()}
                       </span>
                     </div>
                   </div>
@@ -169,10 +194,10 @@ const ContactMessages = () => {
                 <div className="flex space-x-2">
                   <button
                     onClick={() => handleMarkAsRead(selectedMessage.id)}
-                    className={`p-2 rounded-full ${selectedMessage.read ? 'text-gray-400' : 'text-blue-600 hover:bg-blue-50'}`}
-                    disabled={selectedMessage.read}
+                    className={`p-2 rounded-full ${(selectedMessage.read || selectedMessage.status === 'read') ? 'text-gray-400' : 'text-blue-600 hover:bg-blue-50'}`}
+                    disabled={selectedMessage.read || selectedMessage.status === 'read'}
                   >
-                    {selectedMessage.read ? <FaEnvelopeOpen /> : <FaEnvelope />}
+                    {(selectedMessage.read || selectedMessage.status === 'read') ? <FaEnvelopeOpen /> : <FaEnvelope />}
                   </button>
                   <button
                     onClick={() => handleDelete(selectedMessage.id)}

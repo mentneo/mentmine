@@ -19,6 +19,7 @@ import PortfolioManagement from './admin/PortfolioManagement';
 import ServicesManagement from './admin/ServicesManagement';
 import CertificateGenerator from './admin/CertificateGenerator';
 import CertificateHistory from './admin/CertificateHistory';
+import CreatorSubmissions from './admin/CreatorSubmissions';
 
 function AdminDashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -106,6 +107,7 @@ function AdminDashboard() {
     { path: '/admin/events', label: 'Events', icon: <FaCalendarAlt className="mr-2" /> },
     { path: '/admin/portfolio', label: 'Portfolio', icon: <FaStar className="mr-2" /> },
     { path: '/admin/services', label: 'Services', icon: <FaStar className="mr-2" /> },
+    { path: '/admin/creators', label: 'Creators', icon: <FaUserTie className="mr-2" /> },
     { path: '/admin/certificates', label: 'Generate Certificate', icon: <FaStar className="mr-2" /> },
     { path: '/admin/certificates/history', label: 'Certificate History', icon: <FaStar className="mr-2" /> },
     { path: '/admin/hiring-requests', label: 'Hiring Requests', icon: <FaUserTie className="mr-2" /> },
@@ -255,6 +257,7 @@ function AdminDashboard() {
               <Route path="/certificates/history" element={<CertificateHistory />} />
               <Route path="/hiring-requests" element={<HiringRequests />} />
               <Route path="/contact-messages" element={<ContactMessages />} />
+              <Route path="/creators" element={<CreatorSubmissions />} />
               <Route path="/team" element={<TeamManagement />} />
               <Route path="/reviews" element={<ReviewsManagement />} />
               <Route path="*" element={<h1 className="text-2xl font-semibold">Page Not Found</h1>} />
