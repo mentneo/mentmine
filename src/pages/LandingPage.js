@@ -1,15 +1,16 @@
 import { Helmet } from 'react-helmet';
 import React from 'react';
-import { 
-  Navbar, 
-  Hero, 
-  Features, 
-  Footer, 
+import {
+  Navbar,
+  Hero,
+  Features,
+  Footer,
   Testimonials,
   FeaturedCourses,
   FeaturedServices,
   Events,
-  Contact
+  Contact,
+  AIVideosSection
 } from '../components';
 import PortfolioPage from './PortfolioPage';
 
@@ -112,6 +113,9 @@ function LandingPage() {
         </div>
         <div className={`${anim} opacity-100 scale-100`}>
           <FeaturedServices />
+        </div>
+        <div className={`${anim} opacity-100 scale-100`}>
+          <AIVideosSection />
         </div>
         <section id="portfolio" className={`${anim} opacity-100 -translate-y-0`}>
           <PortfolioPage />

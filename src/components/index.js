@@ -13,6 +13,8 @@ import FeaturedCourses from './FeaturedCourses';
 import FeaturedServices from './FeaturedServices';
 import Events from './Events';
 import TeamSection from './TeamSection';
+import AIVideosSection from './AIVideosSection';
+
 
 // Shared UI components
 import Button from './ui/Button';
@@ -23,7 +25,7 @@ export {
   Navbar,
   Footer,
   ProtectedRoute,
-  
+
   // Landing page sections
   Hero,
   About,
@@ -34,7 +36,8 @@ export {
   FeaturedServices,
   Events,
   TeamSection,
-  
+  AIVideosSection,
+
   // UI components
   Button,
   Loader
