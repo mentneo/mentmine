@@ -25,7 +25,7 @@ function Hero({ onCtaClick }) {
               </span>
             </div>
             <p className="text-lg md:text-xl mb-8 text-blue-100 max-w-2xl">
-              Affordable, industry-focused tech education designed specifically for Indian students. Learn real-world skills from expert mentors.
+              Affordable, industry-focused tech education designed specifically for Indian students. Learn real-world skills from expert mentors — founded by Abhi Yeduru and Yaswanth Jada.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

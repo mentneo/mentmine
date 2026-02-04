@@ -96,10 +96,6 @@ function AdminDashboard() {
     }
   };
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
   const navItems = [
     { path: '/admin', label: 'Dashboard', icon: <FaHome className="mr-2" /> },
     { path: '/admin/users', label: 'Users', icon: <FaUsers className="mr-2" /> },

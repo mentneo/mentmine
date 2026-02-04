@@ -57,11 +57,11 @@ function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Courses</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Full-Stack Web Development</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Front-End Development</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Back-End Development</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Mobile App Development</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white transition-colors">Cloud Computing</a></li>
+              <li><a href="/courses" className="text-blue-200 hover:text-white transition-colors">Full-Stack Web Development</a></li>
+              <li><a href="/courses" className="text-blue-200 hover:text-white transition-colors">Front-End Development</a></li>
+              <li><a href="/courses" className="text-blue-200 hover:text-white transition-colors">Back-End Development</a></li>
+              <li><a href="/courses" className="text-blue-200 hover:text-white transition-colors">Mobile App Development</a></li>
+              <li><a href="/courses" className="text-blue-200 hover:text-white transition-colors">Cloud Computing</a></li>
             </ul>
           </div>
 
