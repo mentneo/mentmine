@@ -2,6 +2,16 @@ import React from 'react';
 import { FaVideo, FaRobot, FaMagic, FaChartLine, FaClock, FaDollarSign } from 'react-icons/fa';
 
 const AIVideosSection = () => {
+    // WhatsApp integration
+    const phoneNumber = '919182146476'; // +91 9182146476
+    const message = 'తక్కువ ఖర్చులో AI వీడియోలు కావాలా? 🤖🎥\nMentneo తో రీల్స్, యాడ్స్, ప్రొమో వీడియోలు సులభంగా తయారు చేస్తాం 🚀';
+
+    const handleWhatsAppClick = () => {
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappUrl, '_blank');
+    };
+
     const features = [
         {
             icon: <FaRobot className="text-4xl" />,
@@ -76,7 +86,7 @@ const AIVideosSection = () => {
                     <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
                         <div className="relative bg-gray-900 rounded-2xl p-8 border border-purple-500/30">
-                            <div className="aspect-video bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300">
+                            <div onClick={handleWhatsAppClick} className="aspect-video bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300 cursor-pointer">
                                 {/* Video placeholder with play button */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20"></div>
                                 <div className="relative z-10 text-center">
@@ -100,7 +110,8 @@ const AIVideosSection = () => {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:bg-white/10"
+                            onClick={handleWhatsAppClick}
+                            className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:bg-white/10 cursor-pointer"
                             style={{ animationDelay: `${index * 100}ms` }}
                         >
                             <div className="text-purple-400 mb-4">
@@ -121,6 +132,7 @@ const AIVideosSection = () => {
                         {videoTypes.map((type, index) => (
                             <div
                                 key={index}
+                                onClick={handleWhatsAppClick}
                                 className="group relative overflow-hidden rounded-xl p-6 cursor-pointer"
                                 style={{ animationDelay: `${index * 150}ms` }}
                             >
@@ -143,7 +155,7 @@ const AIVideosSection = () => {
                             <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
                                 Join thousands of businesses already using AI to create stunning video content
                             </p>
-                            <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50">
+                            <button onClick={handleWhatsAppClick} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50">
                                 Start Creating AI Videos
                             </button>
                         </div>
