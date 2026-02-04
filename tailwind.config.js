@@ -9,7 +9,7 @@ module.exports = {
         // Existing blue theme (can be kept for admin or removed if not needed)
         blue: {
           '50': '#f0f5ff',
-          '100': '#e5edff', 
+          '100': '#e5edff',
           '200': '#cddbfe',
           '300': '#b4c6fc',
           '400': '#8da2fb',
@@ -81,6 +81,5 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
   ],
 }
